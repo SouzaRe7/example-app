@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('PesID');
             $table->string('PesNome');
             $table->string('PesCPF', 14);
-            $table->string('PesPhone', 15);
+            $table->string('PesPhone', 20);
             $table->string('PesCEP', 10);
             $table->string('PesEndereco', 250);
             $table->foreignId('PesComumID');

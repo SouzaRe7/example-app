@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\PessoaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-require __DIR__ . '/auth.php';
-
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/pessoas', function () {
-        return view('pessoas');
-    })->name('pessoas');
+
+    Route::resource('pessoas', PessoaController::class);
 });
+require __DIR__ . '/auth.php';
